@@ -9,8 +9,12 @@ namespace ShopManager.DesktopGUI.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        public ShellViewModel()
+        private readonly LoginViewModel loginViewModel;
+
+        public ShellViewModel(LoginViewModel loginViewModel)
         {
+            this.loginViewModel = loginViewModel;
+            ActivateItem(loginViewModel);
         }
     }
 }
