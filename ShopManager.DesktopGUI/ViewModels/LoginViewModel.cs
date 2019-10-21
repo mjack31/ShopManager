@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using ShopManager.APIAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,12 @@ namespace ShopManager.DesktopGUI.ViewModels
     {
         private string username;
         private string password;
+        private IAPIClient apiClient;
+        private AuthUser authenticatedUser;
 
-        public LoginViewModel()
+        public LoginViewModel(IAPIClient apiClient)
         {
-
+            this.apiClient = apiClient;
         }
 
         public string Username
@@ -24,6 +27,7 @@ namespace ShopManager.DesktopGUI.ViewModels
             {
                 username = value;
                 NotifyOfPropertyChange(() => Username);
+                NotifyOfPropertyChange(() => CanLogIn);
             }
         }
 
@@ -34,21 +38,33 @@ namespace ShopManager.DesktopGUI.ViewModels
             {
                 password = value;
                 NotifyOfPropertyChange(() => Password);
+                NotifyOfPropertyChange(() => CanLogIn);
             }
         }
 
-        public void LogIn()
+        public bool CanLogIn
         {
-
+            get
+            {
+                if (Username?.Length > 0
+                    && Password?.Length > 0)
+                    return true;
+                else
+                    return false;
+            }
         }
 
-        public bool CanLogIn()
+        public async Task LogIn()
         {
-            var canlogIn = false;
-            if (Username?.Length > 0)
-                canlogIn = true;
-
-            return canlogIn;
+            try
+            {
+                authenticatedUser = null;
+                authenticatedUser = await apiClient.AuthenticateUser(Username, Password);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

@@ -124,5 +124,11 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShopManager.APIAccess\ShopManager.APIAccess.csproj">
+      <Project>{D8A30FE6-F368-4F4E-A355-A81FBDBC5720}</Project>
+      <Name>ShopManager.APIAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

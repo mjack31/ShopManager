@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Autofac;
+using ShopManager.APIAccess;
 
 namespace ShopManager.DesktopGUI
 {
@@ -26,6 +27,8 @@ namespace ShopManager.DesktopGUI
             builder.RegisterType<WindowManager>().As<IWindowManager>();
             builder.RegisterType<ShellViewModel>().AsSelf();
             builder.RegisterType<LoginViewModel>().AsSelf();
+
+            builder.RegisterType<APIClient>().As<IAPIClient>();
 
             Container = builder.Build();
         }

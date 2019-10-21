@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManager.DesktopGUI", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManager.WebAPI", "ShopManager.WebAPI\ShopManager.WebAPI.csproj", "{B9AE9261-9754-4694-B057-20D8EF1A9517}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManager.APIAccess", "ShopManager.APIAccess\ShopManager.APIAccess.csproj", "{D8A30FE6-F368-4F4E-A355-A81FBDBC5720}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{B9AE9261-9754-4694-B057-20D8EF1A9517}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9AE9261-9754-4694-B057-20D8EF1A9517}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9AE9261-9754-4694-B057-20D8EF1A9517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A30FE6-F368-4F4E-A355-A81FBDBC5720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A30FE6-F368-4F4E-A355-A81FBDBC5720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A30FE6-F368-4F4E-A355-A81FBDBC5720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A30FE6-F368-4F4E-A355-A81FBDBC5720}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

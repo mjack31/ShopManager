@@ -46,7 +46,8 @@
         <PasswordBox Grid.Row="3"
                      Grid.Column="2"
                      Margin="10"
-                     x:Name="Password"></PasswordBox>
+                     x:Name="Password"
+                     PasswordChanged="PasswordBox_PasswordChanged"></PasswordBox>
 
         <Button Content="Log in"
                 Grid.Row="4"
