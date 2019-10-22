@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace ShopManager.DesktopGUI.ViewModels
 {
@@ -42,6 +43,32 @@ namespace ShopManager.DesktopGUI.ViewModels
             }
         }
 
+        private string errorMessage;
+
+        public string ErrorMessage
+        {
+            get { return errorMessage; }
+            set
+            {
+                errorMessage = value;
+                NotifyOfPropertyChange(() => ErrorMessage);
+            }
+        }
+
+        private Brush messageBoxColor;
+
+        public Brush MessageBoxColor
+        {
+            get { return messageBoxColor; }
+            set
+            {
+                messageBoxColor = value;
+                NotifyOfPropertyChange(() => MessageBoxColor);
+            }
+        }
+
+
+
         public bool CanLogIn
         {
             get
@@ -58,12 +85,16 @@ namespace ShopManager.DesktopGUI.ViewModels
         {
             try
             {
+                ErrorMessage = "";
                 authenticatedUser = null;
                 authenticatedUser = await apiClient.AuthenticateUser(Username, Password);
+                MessageBoxColor = Brushes.Green;
+                ErrorMessage = "Logged properly";
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBoxColor = Brushes.Red;
+                ErrorMessage = ex.Message;
             }
         }
     }

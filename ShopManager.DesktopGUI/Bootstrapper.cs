@@ -28,7 +28,7 @@ namespace ShopManager.DesktopGUI
             builder.RegisterType<ShellViewModel>().AsSelf();
             builder.RegisterType<LoginViewModel>().AsSelf();
 
-            builder.RegisterType<APIClient>().As<IAPIClient>();
+            builder.RegisterType<APIClient>().SingleInstance().As<IAPIClient>();
 
             Container = builder.Build();
         }

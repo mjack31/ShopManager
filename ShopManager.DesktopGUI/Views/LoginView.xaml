@@ -13,6 +13,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -54,6 +55,16 @@
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
                 Margin="20"
+                IsDefault="True"
                 x:Name="LogIn"></Button>
+
+        <TextBlock x:Name="ErrorMessage"
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   TextAlignment="Center"
+                   Foreground="{Binding MessageBoxColor}"
+                   FontWeight="Medium"
+                   Margin="10"></TextBlock>
     </Grid>
 </UserControl>
