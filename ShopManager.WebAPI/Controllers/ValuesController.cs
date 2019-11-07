@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopManager.DBAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -19,7 +20,10 @@ namespace ShopManager.WebAPI.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            var dataAccess = new DataAcces();
+
+            var product = dataAccess.GetProductById(1);
+            return product.Name;
         }
 
         // POST api/values

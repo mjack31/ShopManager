@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManager.WebAPI", "ShopM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManager.APIAccess", "ShopManager.APIAccess\ShopManager.APIAccess.csproj", "{D8A30FE6-F368-4F4E-A355-A81FBDBC5720}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManager.DBAccess", "ShopManager.DBAccess\ShopManager.DBAccess.csproj", "{2A595A49-481E-4464-BE39-E4F9470D7BCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{D8A30FE6-F368-4F4E-A355-A81FBDBC5720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8A30FE6-F368-4F4E-A355-A81FBDBC5720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8A30FE6-F368-4F4E-A355-A81FBDBC5720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A595A49-481E-4464-BE39-E4F9470D7BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A595A49-481E-4464-BE39-E4F9470D7BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A595A49-481E-4464-BE39-E4F9470D7BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A595A49-481E-4464-BE39-E4F9470D7BCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
