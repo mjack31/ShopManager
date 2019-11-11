@@ -37,7 +37,7 @@ namespace ShopManager.APIAccess
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<AuthUser> AuthenticateUser(string username, string password)
+        public async Task<AuthenticatedUser> AuthenticateUser(string username, string password)
         {
             var form = new FormUrlEncodedContent(new[]
             {
@@ -50,7 +50,7 @@ namespace ShopManager.APIAccess
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    return await response.Content.ReadAsAsync<AuthUser>();
+                    return await response.Content.ReadAsAsync<AuthenticatedUser>();
                 }
                 else
                 {

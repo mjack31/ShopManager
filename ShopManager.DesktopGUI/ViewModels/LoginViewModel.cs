@@ -14,11 +14,12 @@ namespace ShopManager.DesktopGUI.ViewModels
         private string username;
         private string password;
         private IAPIClient apiClient;
-        private AuthUser authenticatedUser;
+        private IAuthenticatedUser authenticatedUser;
 
-        public LoginViewModel(IAPIClient apiClient)
+        public LoginViewModel(IAPIClient apiClient, IAuthenticatedUser authenticatedUser)
         {
             this.apiClient = apiClient;
+            this.authenticatedUser = authenticatedUser;
         }
 
         public string Username
@@ -66,8 +67,6 @@ namespace ShopManager.DesktopGUI.ViewModels
                 NotifyOfPropertyChange(() => MessageBoxColor);
             }
         }
-
-
 
         public bool CanLogIn
         {

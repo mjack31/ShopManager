@@ -4,6 +4,6 @@ namespace ShopManager.APIAccess
 {
     public interface IAPIClient
     {
-        Task<AuthUser> AuthenticateUser(string username, string password);
+        Task<AuthenticatedUser> AuthenticateUser(string username, string password);
     }
 }

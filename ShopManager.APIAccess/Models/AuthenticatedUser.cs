@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopManager.APIAccess
 {
-    public class AuthUser
+    public class AuthenticatedUser : IAuthenticatedUser
     {
         public string Username { get; set; }
         public string Access_token { get; set; }
