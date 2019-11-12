@@ -22,6 +22,8 @@ namespace ShopManager.DesktopGUI.ViewModels
             this.authenticatedUser = authenticatedUser;
         }
 
+        public event EventHandler LoggedSuccessfully;
+
         public string Username
         {
             get { return username; }
@@ -89,6 +91,7 @@ namespace ShopManager.DesktopGUI.ViewModels
                 authenticatedUser = await apiClient.AuthenticateUser(Username, Password);
                 MessageBoxColor = Brushes.Green;
                 ErrorMessage = "Logged properly";
+                LoggedSuccessfully(this, null);
             }
             catch (Exception ex)
             {

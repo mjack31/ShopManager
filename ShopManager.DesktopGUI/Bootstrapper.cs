@@ -27,6 +27,7 @@ namespace ShopManager.DesktopGUI
             builder.RegisterType<WindowManager>().As<IWindowManager>();
             builder.RegisterType<ShellViewModel>().AsSelf();
             builder.RegisterType<LoginViewModel>().AsSelf();
+            builder.RegisterType<ProductsListViewModel>().AsSelf();
 
             builder.RegisterType<APIClient>().SingleInstance().As<IAPIClient>();
             builder.RegisterType<AuthenticatedUser>().SingleInstance().As<IAuthenticatedUser>();
